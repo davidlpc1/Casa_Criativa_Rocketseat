@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% for idea in ideas %}
+        <title>Atualizar {{idea.title}}</title>
+        <link rel="shortcut icon" href="{{idea.image}}" type="image/png">
+    {% endfor %}
+
+    <link rel="stylesheet" href="/one_idea.css">
+</head>
+<body>
+    <nav id="menu">
+        <li>
+            <a href="/">
+                <img src="/logo.png" alt="Imagem da Logomarca">
+            </a>
+        </li>
+        <li>
+            <a id="show-ideias-link" href="/ideias">
+                Ver ideias
+            </a>
+        </li>
+    </nav>
+    {% for idea in ideas %}
+        <div class="idea">
+            <img 
+            src="{{idea.image}}" 
+            alt="Imagem de {{idea.title}}">   
+            <div class="content">
+                <h3>{{idea.title}}</h3>
+                <p>{{idea.category}}</p>
+                <div class="description">
+                    {{idea.description}}
+                </div>
+                <a href="{{idea.link}}" target="_blank">Ir para a Ideia</a>
+                <a href="/ideias/{{idea.id}}" id="button-delete-idea">
+                    <img id="delete-idea" src="https://www.flaticon.com/svg/static/icons/svg/1214/1214428.svg" alt="Deletar">
+                </a>
+                </form>
+            </div>
+        </div>
+
+    {% endfor %}
+</body>
+</html>

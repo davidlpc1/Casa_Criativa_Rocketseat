@@ -1,0 +1,21 @@
+{% for idea in ideas %}
+
+<div class="idea">
+    <img 
+    src="{{idea.image}}" 
+    alt="Imagem de {{idea.title}}">   
+    <div class="content" ondblclick="atualizarIdea({{idea.id}})">
+        <h3>{{idea.title}}</h3>
+        <p>{{idea.category}}</p>
+        <div class="description">
+            {{idea.description}}
+        </div>
+        <a href="{{idea.link}}" target="_blank">Ir para a Ideia</a>
+        <a href="/ideias/{{idea.id}}" id="button-delete-idea">
+            <img id="delete-idea" src="https://www.flaticon.com/svg/static/icons/svg/1214/1214428.svg" alt="Deletar">
+        </a>
+        </form>
+    </div>
+</div>
+
+{% endfor %}
